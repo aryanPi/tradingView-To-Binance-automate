@@ -10,10 +10,8 @@ Before run this : <br>
       3. Change **"userName"** and **"pass"** in **"userData.json"** <br>
  <br></br>
  
- <br></br>    
-<h4>Webhook URL/history :<h4><br></br>
+ <h4>Webhook URL/history :<h4><br></br>
  Goto : http://host:port/webhook
- <br></br>
  <h3>
  Example of Webhook Syntex:
 </h3>
@@ -32,7 +30,6 @@ Before run this : <br>
      SHORT       (Sell)
      CLOSE_LONG  (Close Buy Position)
      CLOSE_SHORT (Close Sell Position)
- <br></br>    
-<h4>To see the positions/history :<h4><br></br>
- Goto : http://host:port/
+ 
+<h4>To see the positions/history :<h4> Goto : http://host:port/
  
