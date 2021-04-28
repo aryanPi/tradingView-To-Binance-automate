@@ -8,11 +8,14 @@ Before run this : <br>
       1. Add "Token" field in "userData.json" : which matches with your webhook <br>
       2. Add API and SECRET API of your binance account to "userData.json" <br>
       3. Change "userName" and "pass" in "userData.json" <br>
- <br><br>
- <h3><ul>
+ <br></br>
+ <h3>
  Example of Webhook Syntex:
- </ul></h3><br>
-     **In plain test:**
+
+</h3>
+ <br></br>
+ 
+   **In plain test:**
     
      TOKEN=abcd
      SYMBOL=BTCUSDT
@@ -20,7 +23,7 @@ Before run this : <br>
      QTY=0.01
      EXCHANGE=BINANCE
   
-**SIGNAL Fields:**
+   **SIGNAL Fields:**
      
      LONG        (Buy)
      SHORT       (Sell)
