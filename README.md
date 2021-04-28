@@ -9,7 +9,7 @@ Before run this : <br>
       2. Add **API and SECRET API** of your binance account to **"userData.json"** <br>
       3. Change **"userName"** and **"pass"** in **"userData.json"** <br>
  
- <h4>Webhook URL/history : http://host:port/webhook<h4>
+ Webhook URL/history : **http://host:port/webhook**
  <h3>
  Example of Webhook Syntex:
 </h3>
@@ -29,5 +29,5 @@ Before run this : <br>
      CLOSE_LONG  (Close Buy Position)
      CLOSE_SHORT (Close Sell Position)
  
-<h4>To see the positions/history :http://host:port/<h4>
+To see the positions/history : **http://host:port/**
  
