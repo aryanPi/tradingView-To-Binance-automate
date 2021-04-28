@@ -8,9 +8,8 @@ Before run this : <br>
       1. Add **"Token"** field in **"userData.json"** : which matches with your webhook <br>
       2. Add **API and SECRET API** of your binance account to **"userData.json"** <br>
       3. Change **"userName"** and **"pass"** in **"userData.json"** <br>
- <br></br>
  
- <h4>Webhook URL/history :<h4><br></br>
+ <h4>Webhook URL/history :<h4>
  Goto : http://host:port/webhook
  <h3>
  Example of Webhook Syntex:
