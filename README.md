@@ -9,7 +9,7 @@ Before run this : <br>
       2. Add **API and SECRET API** of your binance account to **"userData.json"** <br>
       3. Change **"userName"** and **"pass"** in **"userData.json"** <br>
  
- Webhook URL/history : **http://host:port/webhook**
+ Webhook URL : **http://host:port/webhook**
  <h3>
  Example of Webhook Syntex:
 </h3>
