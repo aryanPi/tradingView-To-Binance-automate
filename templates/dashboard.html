@@ -1,0 +1,299 @@
+<html>
+<head>
+    <script>
+    var repeater;
+    function doWork() {
+      fetch('/checkFile')
+      .then(function (response) {
+          return response.json();
+      })
+      .then(function (text) {
+          if (text.isChange == 't'){document.location.reload(true);}
+      });
+        repeater = setTimeout(doWork, 1000);
+    }
+    doWork();
+    </script>
+    <style>
+    /* By Dominik Biedebach @domobch */
+
+        body {
+          font-family: 'Roboto', sans-serif;
+          padding: 0;
+          margin: 0px;
+        }
+
+
+
+        h1 {
+          text-align: center;
+          padding: 0px 0;
+          font-weight: 800;
+          margin: 0;
+          letter-spacing: -1px;
+          color: inherit;
+          font-size: 40px;
+        }
+
+        /* By Dominik Biedebach @domobch */
+
+        h2 {
+          text-align: center;
+          font-size: 20px;
+          margin: 0;
+          font-weight: 300;
+          color: inherit;
+          padding: 0;
+        }
+
+        .center {
+          text-align: center;
+        }
+
+
+
+        /* NAVIGATION */
+        nav {
+
+          width: 80%;
+          margin: 10px auto;
+          background: #000;
+          padding: 0px 0;
+          box-shadow: 0px 5px 0px #000;
+        }
+
+        /* By Dominik Biedebach @domobch */
+        nav ul {
+          list-style: none;
+          text-align: center;
+        }
+
+        nav ul li {
+          display: inline-block;
+        }
+        nav ul li a {
+          display: block;
+          padding: 15px;
+          text-decoration: none;
+          color: #999;
+          font-weight: 500;
+          text-transform: uppercase;
+          margin: 0 10px;
+        }
+        nav ul li a,
+        nav ul li a:after,
+        nav ul li a:before {
+          transition: all .5s;
+        }
+        nav ul li a:hover {
+          color: #FFCC15;
+        }
+        nav.stroke ul li a,
+            nav.fill ul li a {
+              position: relative;
+            }
+        nav.stroke ul li a:after,
+        nav.fill ul li a:after {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          margin: auto;
+          width: 0%;
+          content: '.';
+          color: transparent;
+          background: #FFCC15;
+          height: 1px;
+        }
+        nav.stroke ul li a:hover:after {
+          width: 100%;
+        }
+
+        nav.fill ul li a {
+          transition: all 2s;
+        }
+        /* By Dominik Biedebach @domobch */
+
+
+            body { background: black; font-family: arial; text-align: center; color: white; }
+            .tableC { margin:10px; background: white; color: black; margin: auto; border-radius: 10px; }
+            td { padding: 15px; }
+            th { background: lightyellow; padding: 10px; }
+            .btn {
+              background-color: #4CAF50;
+              color: #FFCC15;
+              padding: 14px 20px;
+              margin: 8px 0;
+              border: none;
+              cursor: pointer;
+              width: 100%;
+            }
+            input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+.container {
+    width:400px;
+     margin: auto;
+    text-align:center;
+    gravity:center;
+  padding: 16px;
+}
+.b{
+              background-color: #191919;
+              color: #FFCC15;
+              padding:5px 10px;
+               margin: auto;
+              margin: 8px 0;
+              border :none;
+              border-radius: 4px;
+              cursor: pointer;
+              width: 100%;
+}
+
+.selector{
+              background-color: #191919;
+              color: #FFCC15;
+              padding:5px 15px;
+              margin: 8px 0;
+              border :none;
+              border-radius: 4px;
+              cursor: pointer;
+              width: 100%;
+}
+
+
+.marginAuto{
+margin:auto;
+}
+
+    </style>
+
+</head>
+
+<body>
+
+<nav class="stroke">
+    <ul>
+        <li><a href="/">Dashboard</a></li>
+        <li><a href="/changeLev">SET Leverage</a></li>
+        <li><a href="/changeAPIS">Change API(s)</a></li>
+        <li><a href="/changeptoken">Change Token</a></li>
+        <li><a href="/changepassword">Change Password</a></li>
+        <li><a href="/logout">Logout</a></li>
+    </ul>
+</nav>
+
+<table class="tableC">
+    <tr>
+        <th>S.No</th>
+        <th>TIME</th>
+        <th>CALL_TYPE</th>
+        <th>PRICE</th>
+        <th>P/L</th>
+        <th>SYMBOL</th>
+        <th>QTY</th>
+        <th>Acc Bal.(USD)</th>
+    </tr>
+    {% for order in wholeData %}
+    <tr>
+        <td><p>{{ order[0] }}</p></td>
+        <td>
+            <table>
+                <tr>
+                    <p style="margin:5px auto;">{{ order[1] }}</p>
+                </tr>
+
+                {% if order[2] != None %}
+                <hr style="color:black;border-top: 1px solid #000;"/>
+                <tr>
+                    <p style="margin:5px auto;">{{ order[2] }}</p>
+                </tr>
+                {% endif %}
+            </table>
+        </td>
+        <td>
+            <table>
+                <tr>
+                    <p style="margin:5px auto;">{{ order[3] }}</p>
+                </tr>
+                {% if order[2] != None %}
+                <hr style="color:black;border-top: 1px solid #000;"/>
+                <tr>
+                    <p style="margin:5px auto;">{{ order[4] }}</p>
+                </tr>
+                {% endif%}
+            </table>
+        </td>
+
+        <td>
+            <table>
+                <tr>
+                    <p style="margin:5px auto;">{{ order[5] }}</p>
+                </tr>
+
+                {% if order[2] != None %}
+                <hr style="color:black;border-top: 1px solid #000;"/>
+                <tr>
+                    <p style="margin:5px auto;">{{ order[6] }}</p>
+                </tr>
+                {% endif%}
+            </table>
+        </td>
+        <td>
+            <table>
+                <tr>
+                    <p style="margin:5px auto;">{{ order[7] }}</p>
+                </tr>
+                {% if order[2] != None %}
+                <hr style="color:black;border-top: 1px solid #000;"/>
+                <tr>
+                    <p style="margin:5px auto;">{{ order[8] }}</p>
+                </tr>
+                {% endif%}
+            </table>
+        </td>
+        <td><p>{{ order[9] }}</p></td>
+        <td><p>{{ order[10] }}</p></td>
+        <td><p>{{ order[11] }}</p></td>
+    </tr>
+    {% endfor %}
+</table>
+
+<table class="marginAuto">
+    <tr>
+        <td>
+            <p>P/L :</p>
+            <p {{ total_plain_color }}>{{total_plain}}</p>
+        </td>
+        <td>
+            <p>P/L (%) :</p>
+            <p {{ total_percentage_color }}>{{total_percentage}}%</p>
+        </td>
+        <td>
+            <p>Acc. Balaance :</p>
+            <p>{{account_balance}}USD</p>
+        </td>
+        <form action="/select" method="POST">
+            <td>
+                <select name="selector" class="selector">
+                    <option value="day" class="selector">Day(Today)</option>
+                    <option value="week">Week</option>
+                    <option value="all">All</option>
+                </select>
+            </td>
+            <td>
+                <button class="b">GO</button>
+
+            </td>
+        </form>
+    </tr>
+</table>
+
+
+</body>
+</html>
